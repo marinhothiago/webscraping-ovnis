@@ -9,7 +9,6 @@ Original file is located at
 
 import pandas as pd
 import matplotlib.pyplot as plt
-mport numpy as np
 
 df_ovnis = pd.read_csv("ovnis.csv", index_col=[0])
 
@@ -38,7 +37,7 @@ for state in states:
   estados_fireball.append(fireball[fireball['State'] == state].count()['Posted'])
   estados_sphere.append(sphere[sphere['State'] == state].count()['Posted'])
 
-# Cria eixo x para produto A e produto B com uma separação de 0.20 entre as barras
+# Cria eixo x com uma separação de 0.20 entre as barras
 x1 =  np.arange(len(estados_light))
 x2 = [x + 0.20 for x in x1]
 x3 = [x + 0.20 for x in x2]
@@ -60,7 +59,7 @@ plt.xlabel('State')
 plt.ylabel('Views')
 plt.show()
 
-# Cria eixo x para produto A e produto B com uma separação de 0.20 entre as barras
+# Cria eixo x com a mesma separação entre as barras
 x =  np.arange(len(estados_light))
 
 fireball_bottom = []
