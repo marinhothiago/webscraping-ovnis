@@ -17,6 +17,16 @@ df_ovnis
 df_notnull = df_ovnis.dropna(subset=["State"])
 df_notnull = df_notnull.dropna(subset=["City"])
 df_notnull = df_notnull.dropna(subset=["Shape"])
+
+df_remove = df_notnull.loc[(df_notnull['Shape'] == 'Unknown') 
+                         | (df_notnull['Shape'] == 'None')
+                         | (df_notnull['City'] == 'Unknown') 
+                         | (df_notnull['City'] == 'None')
+                         | (df_notnull['State'] == 'Unknown') 
+                         | (df_notnull['State'] == 'None')]
+
+df_notnull = df_notnull.drop(df_remove.index)
+
 df_notnull
 
 #3. Manter somente os registros referentes aos 51 estados dos Estados Unidos:
