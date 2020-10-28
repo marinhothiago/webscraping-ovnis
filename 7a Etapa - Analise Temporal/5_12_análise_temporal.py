@@ -130,7 +130,7 @@ for j in anos:
 plt.plot(anos_grafico, views)
 plt.xlabel('Year')
 plt.ylabel('Views')
-plt.title("Evolução de Obervações ao Longo dos Anos de 1997 a 2017")
+plt.title("Evolução de Obervações da Cidade de Phoenix ao Longo dos Anos de 1997 a 2017")
 plt.xticks(rotation=45)
 
 plt.show()
