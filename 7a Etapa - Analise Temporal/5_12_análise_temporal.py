@@ -190,20 +190,25 @@ df_forecast
 
 df_test
 
+#Cria Array vazios que vao receber os valores a serem calculados
 array_forecast = []
 array_test = []
 diferenca = []
 
+#for que intera as visualizações do dataframe forecast no array 'array_forecast'
 for i in df_forecast.itertuples():
   array_forecast.append(float(df_forecast.Views[i.Index]))
 
+#for que intera as visualizações do dataframe test no array 'array_test'
 for index, row in df_test.iterrows():
   teste = str(row["Views"])
   array_test.append(float(teste))
 
+#calcula a diferença de cada elemnto do array
 for i in range(92):
   diferenca.append(array_forecast[i] - array_test[i])
 
+#printa todas as diferenças de cada linha do dataframe, mas no formato de array
 print(diferenca)
 
 # O Erro Médio é calculado quando calculamos o valor absoluto 
